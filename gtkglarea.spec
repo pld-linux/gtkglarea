@@ -5,8 +5,8 @@ Release:	1
 Copyright:	LGPL
 Group:		X11/Libraries
 Source:		http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
-BuildPrereq:	gtk+-devel => 1.2.0
-BuildPrereq:	Mesa-devel => 3.0
+BuildRequires:	gtk+-devel => 1.2.0
+BuildRequires:	Mesa-devel => 3.0
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
