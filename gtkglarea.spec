@@ -2,7 +2,7 @@ Summary:	GtkGLArea OpenGL widget for GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.2.3
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -17,6 +17,7 @@ Requires:	OpenGL
 BuildRequires:	OpenGL-devel
 BuildRequires:	gtk+-devel => 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libgtkglarea5
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define		_prefix		/usr/X11R6
@@ -47,6 +48,7 @@ Group(uk):	X11/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
+Obsoletes:	libgtkglarea5-devel
 
 %description devel
 Header files for development using the GtkGLArea widget.
