@@ -2,6 +2,8 @@ Summary:	GtkGLArea OpenGL widget for GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Summary(pl):	GtkGLArea - kontrolka Gtk+ z do prezentacji obiektСw OpenGL
 Summary(pt_BR):	Um widget OpenGL para a biblioteca GUI GTK+
+Summary(ru):	GtkGLArea - это OpenGL виджет для GTK+
+Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
 Name:		gtkglarea
 Version:	1.2.3
 Release:	4
@@ -35,10 +37,22 @@ biblioteca GUI. GtkGLArea И construМda em cima do gdkgl. Gdkgl И
 basicamente um wrapper de funГУes GLX. GtkGLArea widget И derivado do
 widget GtkDrawingArea e adiciona somente algumas funГУes.
 
+%description -l ru
+Так же как GTK+ строится поверх GDK, GtkGLArea построена поверх gdkgl,
+которая по сути есть оберткой вокруг функций GLX. Сам виджет очень
+похож на виджет GtkDrawinigArea и добавляет только три новые функции.
+
+%description -l uk
+Так само, як GTK+ буду╓ться поверх GDK, GtkGLArea побудована поверх
+gdkgl, яка по сут╕ ╓ обгорткою навкруг функц╕й GLX. Сам в╕джет дуже
+схожий на в╕джет GtkDrawinigArea та дода╓ лише три нов╕ функц╕╖.
+
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchНs *.h Хt statikХs lНvreyes
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes que usem a biblioteca GtkGLArea
+Summary(ru):	GtkGLArea - файлы для разработки программ
+Summary(uk):	GtkGLArea - файли для розробки програм
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
@@ -51,13 +65,19 @@ Header files for development using the GtkGLArea widget.
 %description devel -l pl
 Pliki nagЁСwkowe do budowania programСw u©ywaj╠cych widgetu GtkGLArea.
 
-%description devel -l wa
-Ci paket chal a dvins les fitchНs *.h eyХt les statikХs lНvreyes k' i
-gn a mezЕjhe po fИ des porogrames avou les foncsions di GtkGLArea.
-
 %description devel -l pt_BR
 Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes
 que usem a biblioteca GtkGLArea.
+
+%description devel -l ru
+Файлы для разработки программ с использованием GtkGLArea.
+
+%description devel -l uk
+Файли для розробки програм з використанням GtkGLArea.
+
+%description devel -l wa
+Ci paket chal a dvins les fitchНs *.h eyХt les statikХs lНvreyes k' i
+gn a mezЕjhe po fИ des porogrames avou les foncsions di GtkGLArea.
 
 %package static
 Summary:	GtkGLArea static libraries
@@ -72,7 +92,7 @@ GtkGLArea (OpenGL for GTK+) static libraries.
 %description static -l pl
 Statyczne biblioteki GtkGLArea (OpenGL dla GTK+).
 
-%description devel-static -l pt_BR
+%description static -l pt_BR
 Bibliotecas estАticas para desenvolvimento de aplicaГУes que usem a
 biblioteca GtkGLArea.
 
