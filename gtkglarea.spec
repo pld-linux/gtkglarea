@@ -15,6 +15,7 @@ Requires:	OpenGL
 BuildRequires:	automake
 BuildRequires:	OpenGL-devel
 BuildRequires:	gtk+2-devel => 2.1.3-3
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgtkglarea5
 
