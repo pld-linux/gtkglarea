@@ -57,7 +57,7 @@ Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
-Requires:	gtk+-devel => 1.2.0
+Requires:	gtk+2-devel => 2.1.2
 Obsoletes:	libgtkglarea5-devel
 
 %description devel
