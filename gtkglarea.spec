@@ -28,7 +28,7 @@ Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers.
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
-Requires:	Mesa-devel => 3.0
+Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
 
 %description devel
