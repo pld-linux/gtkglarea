@@ -8,7 +8,7 @@ Group:		X11/Libraries
 Source:		http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
 BuildRequires:	gtk+-devel => 1.2.0
 BuildRequires:	Mesa-devel => 3.0
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_datadir	/usr/share
