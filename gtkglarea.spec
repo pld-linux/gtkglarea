@@ -6,10 +6,11 @@ Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.2.3
-Release:	6
+Release:	7
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-m4_fix.patch
 Requires:	OpenGL
 BuildRequires:	OpenGL-devel
 BuildRequires:	gtk+-devel => 1.2.0
@@ -99,6 +100,7 @@ biblioteca GtkGLArea.
 
 %prep
 %setup -q
+%patch0
 
 %build
 %configure
