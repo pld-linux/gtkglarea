@@ -1,62 +1,76 @@
-# Note that this is NOT a relocatable package
-%define ver      1.2.1
-%define rel      SNAP
-%define prefix   /usr
+Summary:	GtkGLArea OpenGL widget for GTK+
+Name:		gtkglarea
+Version:	1.2.1
+Release:	1
+Copyright:	LGPL
+Group:		X11/Libraries
+Source:		http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
+BuildPrereq:	gtk+-devel => 1.2.0
+BuildPrereq:	Mesa-devel => 3.0
+BuildRoot:	/tmp/%{name}-%{version}-root
 
-Summary: GtkGLArea OpenGL widget for GTK+
-Name: gtkglarea
-Version: %ver
-Release: %rel
-Copyright: LGPL
-Packager: Ray Glendenning <ray.glendenning@hackery.demon.co.uk>
-Group: X11/Libraries
-Source:  http://www.student.oulu.fi/~jlof/gtkglarea/download/gtkglarea-%{version}.tar.gz
-BuildRoot: /var/tmp/gtkglarea-%{version}-root
-Docdir: %{prefix}/doc
-Requires: Mesa => 3.0, gtk+ => 1.1.5
+%define		_prefix		/usr/X11R6
+%define		_datadir	/usr/share
 
 %description
-Just as GTK+ is build on top of GDK, GtkGLArea is built on top of gdkgl which
-is basically wrapper around GLX functions. The widget itself is derived from
-GtkDrawinigArea widget and adds only few extra functions.
+Just as GTK+ is build on top of GDK, GtkGLArea is built on top of gdkgl
+which is basically wrapper around GLX functions. The widget itself is
+derived from GtkDrawinigArea widget and adds only few extra functions.
 
 %package devel
-Summary: GtkGLArea OpenGL widget for GTK+.  Development libs and headers.
-Group: X11/Libraries
-Requires: %{name} = %{version} , Mesa-devel => 3.0 , gtk+-devel => 1.1.5
+Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers.
+Group:		X11/Libraries
+Requires:	%{name} = %{version}
+Requires:	Mesa-devel => 3.0
+Requires:	gtk+-devel => 1.2.0
 
 %description devel
-Static libraries and header files for development using the GtkGLArea widget.
+Static libraries and header files for development using the GtkGLArea
+widget.
+
+%package static
+Summary:	GtkGLArea OpenGL OpenGL for GTK+ static libraries
+Group:		X11/Libraries
+Requires:	%{name}-devel = %{version}
+
+%description static
+GtkGLArea OpenGL OpenGL for GTK+ static libraries.
 
 %prep
-%setup
+%setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT%{prefix} install
+make DESTDIR=$RPM_BUILD_ROOT install
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
+
+gzip -9nf AUTHORS ChangeLog NEWS README docs/HOWTO.txt docs/gdkgl.txt \
+	docs/gtkglarea.txt
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
-
 %files
-%defattr(-, root, root)
-
-%doc AUTHORS COPYING ChangeLog INSTALL NEWS README docs/HOWTO.txt docs/gdkgl.txt docs/gtkglarea.txt
-%{prefix}/lib/lib*.so.*
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
-%defattr(-, root, root)
+%defattr(644,root,root,755)
+%doc *gz docs/*.gz
 
-%{prefix}/include/gtkgl/*
-%{prefix}/lib/lib*.*a
-%{prefix}/lib/lib*.so
-%{prefix}/share/aclocal/*
+%{_includedir}/gtkgl
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_datadir}/aclocal/*
+
+%files static
+%attr(644,root,root) %{_libdir}/lib*.*a
