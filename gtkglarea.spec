@@ -5,15 +5,16 @@ Summary(ru):	GtkGLArea - ÜÔÏ OpenGL ×ÉÄÖÅÔ ÄÌÑ GTK+
 Summary(uk):	GtkGLArea - ÃÅ OpenGL ×¦ÄÖÅÔ ÄÌÑ GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
-Version:	1.2.3
-Release:	7
+Version:	1.99.0
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-m4_fix.patch
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkglarea/1.99/%{name}-%{version}.tar.bz2
+# Source0-md5: cd69f77240ae8038f95a2e5e0b7e5f25
 Requires:	OpenGL
 BuildRequires:	OpenGL-devel
-BuildRequires:	gtk+-devel => 1.2.0
+# BuildRequires:	gtk+2-devel => 2.1.3-3 # Oryginal BR from HEAD perhaps its important 
+BuildRequires:	gtk+2-devel => 2.1.0 
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgtkglarea5
 
@@ -58,7 +59,8 @@ Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
-Requires:	gtk+-devel => 1.2.0
+# Requires:	gtk+2-devel => 2.1.2 # Oryginal BR from HEAD perhaps it's important
+Requires:	gtk+2-devel => 2.1.0
 Obsoletes:	libgtkglarea5-devel
 
 %description devel
@@ -100,7 +102,6 @@ biblioteca GtkGLArea.
 
 %prep
 %setup -q
-%patch0
 
 %build
 %configure
@@ -111,10 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=%{_aclocaldir}
-
-gzip -9nf AUTHORS ChangeLog NEWS README docs/HOWTO.txt docs/gdkgl.txt \
-	docs/gtkglarea.txt
+	pkgconfigdir=%{_pkgconfigdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -128,11 +126,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *gz docs/*.gz
-%{_includedir}/gtkgl
+%doc AUTHORS ChangeLog NEWS README docs/*.txt
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
-%{_aclocaldir}/*
+%{_libdir}/lib*.la
+%{_includedir}/*
+%{_pkgconfigdir}/*
 
 %files static
 %defattr(644,root,root,755)
