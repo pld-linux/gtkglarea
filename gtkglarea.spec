@@ -7,10 +7,12 @@ License:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
+Requires:	OpenGL
 BuildRequires:	gtk+-devel => 1.2.0
 BuildRequires:	OpenGL-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define		_prefix		/usr/X11R6
 %define		_datadir	/usr/share
 
