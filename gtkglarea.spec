@@ -5,13 +5,6 @@ Version:	1.2.3
 Release:	3
 License:	LGPL
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(ru):	X11/Библиотеки
-Group(uk):	X11/Б╕бл╕отеки
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
 Requires:	OpenGL
 BuildRequires:	OpenGL-devel
@@ -38,13 +31,6 @@ GtkDrawingArea i posiada jedynie kilka dodatkowych funkcji.
 Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchНs *.h Хt statikХs lНvreyes
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(ru):	X11/Библиотеки
-Group(uk):	X11/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
@@ -64,13 +50,6 @@ gn a mezЕjhe po fИ des porogrames avou les foncsions di GtkGLArea.
 Summary:	GtkGLArea static libraries
 Summary(pl):	Statyczne biblioteki GtkGLArea
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(ru):	X11/Библиотеки
-Group(uk):	X11/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
