@@ -2,14 +2,19 @@ Summary:	GtkGLArea OpenGL widget for GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.2.2
-Release:	7
+Release:	8
 License:	LGPL
 Group:		X11/Libraries
+Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
 Requires:	OpenGL
 BuildRequires:	gtk+-devel => 1.2.0
 BuildRequires:	OpenGL-devel
+BuildRequires:	autoconf
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -31,6 +36,9 @@ GtkDrawingArea i posiada jedynie kilka dodatkowych funkcji.
 Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Libraries
+Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
@@ -47,6 +55,9 @@ gn a mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 %package static
 Summary:	GtkGLArea OpenGL OpenGL for GTK+ static libraries
 Group:		X11/Libraries
+Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Requires:	%{name}-devel = %{version}
 
@@ -57,6 +68,9 @@ GtkGLArea OpenGL OpenGL for GTK+ static libraries.
 %setup -q
 
 %build
+libtoolize --copy --force
+aclocal
+autoconf
 %configure
 %{__make}
 
