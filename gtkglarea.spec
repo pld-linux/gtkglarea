@@ -6,7 +6,7 @@ Summary(ru):	GtkGLArea - это OpenGL виджет для GTK+
 Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
 Name:		gtkglarea
 Version:	1.2.3
-Release:	4
+Release:	5
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
