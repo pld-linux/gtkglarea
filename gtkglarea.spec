@@ -12,6 +12,7 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkglarea/1.99/%{name}-%{version}.tar.bz2
 # Source0-md5: cd69f77240ae8038f95a2e5e0b7e5f25
 Requires:	OpenGL
+BuildRequires:	automake
 BuildRequires:	OpenGL-devel
 BuildRequires:	gtk+2-devel => 2.1.3-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -100,6 +101,7 @@ biblioteca GtkGLArea.
 %setup -q
 
 %build
+cp /usr/share/automake/config.sub .
 %configure
 %{__make}
 
