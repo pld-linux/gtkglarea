@@ -1,4 +1,5 @@
 Summary:	GtkGLArea OpenGL widget for GTK+
+Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.2.1
 Release:	1
@@ -19,6 +20,7 @@ derived from GtkDrawinigArea widget and adds only few extra functions.
 
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers.
+Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	Mesa-devel => 3.0
@@ -27,6 +29,10 @@ Requires:	gtk+-devel => 1.2.0
 %description devel
 Static libraries and header files for development using the GtkGLArea
 widget.
+
+%description -l wa devel
+Ci paket chal a dvins les fitchîs *.h eyèt les statikès lîvreyes k' i gn a
+mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 
 %package static
 Summary:	GtkGLArea OpenGL OpenGL for GTK+ static libraries
