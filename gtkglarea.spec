@@ -11,9 +11,10 @@ Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
 Requires:	OpenGL
-BuildRequires:	gtk+-devel => 1.2.0
 BuildRequires:	OpenGL-devel
 BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gtk+-devel => 1.2.0
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -68,9 +69,11 @@ GtkGLArea OpenGL OpenGL for GTK+ static libraries.
 %setup -q
 
 %build
+rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
+automake -a -c
 %configure
 %{__make}
 
@@ -95,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc *gz docs/*.gz
-
 %{_includedir}/gtkgl
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
