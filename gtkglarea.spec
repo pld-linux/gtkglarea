@@ -1,5 +1,7 @@
 Summary:	GtkGLArea OpenGL widget for GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
+Summary(pl):	GtkGLArea - kontrolka Gtk+ z do prezentacji obiektów OpenGL
+Summary(pt_BR):	Um widget OpenGL para a biblioteca GUI GTK+
 Name:		gtkglarea
 Version:	1.2.3
 Release:	4
@@ -27,9 +29,16 @@ Podobnie jak GTK+ jest zbudowane na GDK, tak i GtkGLArea powsta³o na
 bazie gdkgl, który jest wrapperem funkcji GLX. Sam widget pochodzi od
 GtkDrawingArea i posiada jedynie kilka dodatkowych funkcji.
 
+%description -l pt_BR
+GtkGLArea é um OpenGL widget para GTK+ (the Gimp ToolKit), uma
+biblioteca GUI. GtkGLArea é construída em cima do gdkgl. Gdkgl é
+basicamente um wrapper de funções GLX. GtkGLArea widget é derivado do
+widget GtkDrawingArea e adiciona somente algumas funções.
+
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
@@ -46,9 +55,14 @@ Pliki nag³ówkowe do budowania programów u¿ywaj±cych widgetu GtkGLArea.
 Ci paket chal a dvins les fitchîs *.h eyèt les statikès lîvreyes k' i
 gn a mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 
+%description devel -l pt_BR
+Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
+que usem a biblioteca GtkGLArea.
+
 %package static
 Summary:	GtkGLArea static libraries
 Summary(pl):	Statyczne biblioteki GtkGLArea
+Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -57,6 +71,10 @@ GtkGLArea (OpenGL for GTK+) static libraries.
 
 %description static -l pl
 Statyczne biblioteki GtkGLArea (OpenGL dla GTK+).
+
+%description devel-static -l pt_BR
+Bibliotecas estáticas para desenvolvimento de aplicações que usem a
+biblioteca GtkGLArea.
 
 %prep
 %setup -q
