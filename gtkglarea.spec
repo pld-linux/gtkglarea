@@ -5,15 +5,14 @@ Summary(ru):	GtkGLArea - это OpenGL виджет для GTK+
 Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
-Version:	1.2.3
-Release:	7
+Version:	1.99.0
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-m4_fix.patch
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkglarea/1.99/%{name}-%{version}.tar.bz2
 Requires:	OpenGL
 BuildRequires:	OpenGL-devel
-BuildRequires:	gtk+-devel => 1.2.0
+BuildRequires:	gtk+2-devel => 2.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgtkglarea5
 
@@ -100,7 +99,6 @@ biblioteca GtkGLArea.
 
 %prep
 %setup -q
-%patch0
 
 %build
 %configure
@@ -111,10 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=%{_aclocaldir}
-
-gzip -9nf AUTHORS ChangeLog NEWS README docs/HOWTO.txt docs/gdkgl.txt \
-	docs/gtkglarea.txt
+	pkgconfigdir=%{_pkgconfigdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -128,11 +123,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *gz docs/*.gz
-%{_includedir}/gtkgl
+%doc AUTHORS ChangeLog NEWS README docs/*.txt
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%{_aclocaldir}/*
+%{_includedir}/*
+%{_pkgconfigdir}/*
 
 %files static
 %defattr(644,root,root,755)
