@@ -18,6 +18,11 @@ Just as GTK+ is build on top of GDK, GtkGLArea is built on top of gdkgl
 which is basically wrapper around GLX functions. The widget itself is
 derived from GtkDrawinigArea widget and adds only few extra functions.
 
+%description -l pl
+Podobnie jak GTK+ jest zbudowane na GDK, tak i GtkGLArea powsta³o na bazie
+gdkgl, który jest wrapperem funkcji GLX. Sam widget pochodzi od GtkDrawingArea
+i posiada jedynie kilka dodatkowych funkcji.
+
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers.
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
