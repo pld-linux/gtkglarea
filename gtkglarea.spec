@@ -2,8 +2,8 @@ Summary:	GtkGLArea OpenGL widget for GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.2.1
-Release:	1
-Copyright:	LGPL
+Release:	2
+License:	LGPL
 Group:		X11/Libraries
 Source:		http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
 BuildRequires:	gtk+-devel => 1.2.0
