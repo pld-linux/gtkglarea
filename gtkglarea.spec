@@ -15,10 +15,7 @@ Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
 Requires:	OpenGL
 BuildRequires:	OpenGL-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	gtk+-devel => 1.2.0
-BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -52,15 +49,18 @@ Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
 
 %description devel
-Static libraries and header files for development using the GtkGLArea
-widget.
+Header files for development using the GtkGLArea widget.
 
-%description -l wa devel
+%description devel -l pl
+Pliki nag³ówkowe do budowania programów u¿ywaj±cych widgetu GtkGLArea.
+
+%description devel -l wa
 Ci paket chal a dvins les fitchîs *.h eyèt les statikès lîvreyes k' i
 gn a mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 
 %package static
-Summary:	GtkGLArea OpenGL OpenGL for GTK+ static libraries
+Summary:	GtkGLArea static libraries
+Summary(pl):	Statyczne biblioteki GtkGLArea
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(es):	X11/Bibliotecas
@@ -72,17 +72,15 @@ Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
-GtkGLArea OpenGL OpenGL for GTK+ static libraries.
+GtkGLArea (OpenGL for GTK+) static libraries.
+
+%description static -l pl
+Statyczne biblioteki GtkGLArea (OpenGL dla GTK+).
 
 %prep
 %setup -q
 
 %build
-rm -f missing
-libtoolize --copy --force
-aclocal
-autoconf
-automake -a -c
 %configure
 %{__make}
 
@@ -96,11 +94,11 @@ rm -rf $RPM_BUILD_ROOT
 gzip -9nf AUTHORS ChangeLog NEWS README docs/HOWTO.txt docs/gdkgl.txt \
 	docs/gtkglarea.txt
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
