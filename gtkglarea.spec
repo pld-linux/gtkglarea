@@ -1,5 +1,5 @@
 Summary:	GtkGLArea OpenGL widget for GTK+
-Summary(pl):	GtkGLArea - kontrolka Gtk+ do prezentacji obiektСw OpenGL
+Summary(pl):	GtkGLArea - kontrolka GTK+ do prezentacji obiektСw OpenGL
 Summary(pt_BR):	Um widget OpenGL para a biblioteca GUI GTK+
 Summary(ru):	GtkGLArea - это OpenGL виджет для GTK+
 Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
