@@ -52,7 +52,7 @@ GtkGLArea OpenGL OpenGL for GTK+ static libraries.
 
 %build
 %configure
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
