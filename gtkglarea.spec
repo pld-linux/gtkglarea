@@ -1,12 +1,12 @@
 Summary:	GtkGLArea OpenGL widget for GTK+
-Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
-Summary(pl):	GtkGLArea - kontrolka Gtk+ z do prezentacji obiektСw OpenGL
+Summary(pl):	GtkGLArea - kontrolka Gtk+ do prezentacji obiektСw OpenGL
 Summary(pt_BR):	Um widget OpenGL para a biblioteca GUI GTK+
 Summary(ru):	GtkGLArea - это OpenGL виджет для GTK+
 Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
+Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.2.3
-Release:	5
+Release:	6
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{name}-%{version}.tar.gz
@@ -48,11 +48,12 @@ gdkgl, яка по сут╕ ╓ обгорткою навкруг функц╕й GLX. Сам в╕джет дуже
 схожий на в╕джет GtkDrawinigArea та дода╓ лише три нов╕ функц╕╖.
 
 %package devel
-Summary:	GtkGLArea OpenGL widget for GTK+.  Development libs and headers
-Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchНs *.h Хt statikХs lНvreyes
+Summary:	GtkGLArea OpenGL widget for GTK+ - development libs and headers
+Summary(pl):	Pliki nagЁСwkowe GtkGLArea
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes que usem a biblioteca GtkGLArea
 Summary(ru):	GtkGLArea - файлы для разработки программ
 Summary(uk):	GtkGLArea - файли для розробки програм
+Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchНs *.h Хt statikХs lНvreyes
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
