@@ -11,13 +11,13 @@ License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkglarea/1.99/%{name}-%{version}.tar.bz2
 # Source0-md5:	cd69f77240ae8038f95a2e5e0b7e5f25
-Requires:	OpenGL
-BuildRequires:	automake
 BuildRequires:	OpenGL-devel
+BuildRequires:	automake
 BuildRequires:	gtk+2-devel => 2.1.3-3
 BuildRequires:	pkgconfig
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires:	OpenGL
 Obsoletes:	libgtkglarea5
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 
@@ -56,7 +56,7 @@ Summary(ru):	GtkGLArea - ÆÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍÍ
 Summary(uk):	GtkGLArea - ÆÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
 Requires:	gtk+2-devel => 2.1.2
 Obsoletes:	libgtkglarea5-devel
@@ -86,7 +86,7 @@ Summary:	GtkGLArea static libraries
 Summary(pl):	Statyczne biblioteki GtkGLArea
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GtkGLArea (OpenGL for GTK+) static libraries.
