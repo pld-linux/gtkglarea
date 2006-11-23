@@ -6,16 +6,16 @@ Summary(uk):	GtkGLArea - ÃÅ OpenGL ×¦ÄÖÅÔ ÄÌÑ GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.99.0
-Release:	4
+Release:	5
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkglarea/1.99/%{name}-%{version}.tar.bz2
 # Source0-md5:	cd69f77240ae8038f95a2e5e0b7e5f25
-BuildRequires:	OpenGL-devel
+# libGLU for examples only
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel => 2.1.3-3
+BuildRequires:	gtk+2-devel => 1:2.1.3-3
 BuildRequires:	pkgconfig
-Requires:	OpenGL
 Obsoletes:	libgtkglarea5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,10 +55,10 @@ Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplic
 Summary(ru):	GtkGLArea - ÆÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍÍ
 Summary(uk):	GtkGLArea - ÆÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
-Group:		X11/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
-Requires:	gtk+2-devel => 2.1.2
+Requires:	gtk+2-devel >= 1:2.1.2
 Obsoletes:	libgtkglarea5-devel
 
 %description devel
@@ -85,7 +85,7 @@ gn a mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 Summary:	GtkGLArea static libraries
 Summary(pl):	Statyczne biblioteki GtkGLArea
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
-Group:		X11/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
@@ -104,6 +104,12 @@ biblioteca GtkGLArea.
 %build
 cp /usr/share/automake/config.sub .
 %configure
+
+# lib doesn't use libGLU
+%{__make} -C gtkgl \
+	GL_LIBS="-lGL"
+
+# but examples do
 %{__make}
 
 %install
