@@ -1,9 +1,9 @@
 Summary:	GtkGLArea OpenGL widget for GTK+
-Summary(pl):	GtkGLArea - kontrolka GTK+ do prezentacji obiektСw OpenGL
-Summary(pt_BR):	Um widget OpenGL para a biblioteca GUI GTK+
-Summary(ru):	GtkGLArea - это OpenGL виджет для GTK+
-Summary(uk):	GtkGLArea - це OpenGL в╕джет для GTK+
-Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
+Summary(pl.UTF-8):   GtkGLArea - kontrolka GTK+ do prezentacji obiektцЁw OpenGL
+Summary(pt_BR.UTF-8):   Um widget OpenGL para a biblioteca GUI GTK+
+Summary(ru.UTF-8):   GtkGLArea - я█я┌п╬ OpenGL п╡п╦п╢п╤п╣я┌ п╢п╩я▐ GTK+
+Summary(uk.UTF-8):   GtkGLArea - я├п╣ OpenGL п╡я√п╢п╤п╣я┌ п╢п╩я▐ GTK+
+Summary(wa.UTF-8):   GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	1.99.0
 Release:	5
@@ -27,34 +27,34 @@ gdkgl which is basically wrapper around GLX functions. The widget
 itself is derived from GtkDrawinigArea widget and adds only few extra
 functions.
 
-%description -l pl
-Podobnie jak GTK+ jest zbudowane na GDK, tak i GtkGLArea powstaЁo na
-bazie gdkgl, ktСry jest wrapperem funkcji GLX. Sam widget pochodzi od
+%description -l pl.UTF-8
+Podobnie jak GTK+ jest zbudowane na GDK, tak i GtkGLArea powstaе┌o na
+bazie gdkgl, ktцЁry jest wrapperem funkcji GLX. Sam widget pochodzi od
 GtkDrawingArea i posiada jedynie kilka dodatkowych funkcji.
 
-%description -l pt_BR
-GtkGLArea И um OpenGL widget para GTK+ (the Gimp ToolKit), uma
-biblioteca GUI. GtkGLArea И construМda em cima do gdkgl. Gdkgl И
-basicamente um wrapper de funГУes GLX. GtkGLArea widget И derivado do
-widget GtkDrawingArea e adiciona somente algumas funГУes.
+%description -l pt_BR.UTF-8
+GtkGLArea ц╘ um OpenGL widget para GTK+ (the Gimp ToolKit), uma
+biblioteca GUI. GtkGLArea ц╘ construц╜da em cima do gdkgl. Gdkgl ц╘
+basicamente um wrapper de funц╖ц╣es GLX. GtkGLArea widget ц╘ derivado do
+widget GtkDrawingArea e adiciona somente algumas funц╖ц╣es.
 
-%description -l ru
-Так же как GTK+ строится поверх GDK, GtkGLArea построена поверх gdkgl,
-которая по сути есть оберткой вокруг функций GLX. Сам виджет очень
-похож на виджет GtkDrawinigArea и добавляет только три новые функции.
+%description -l ru.UTF-8
+п╒п╟п╨ п╤п╣ п╨п╟п╨ GTK+ я│я┌я─п╬п╦я┌я│я▐ п©п╬п╡п╣я─я┘ GDK, GtkGLArea п©п╬я│я┌я─п╬п╣п╫п╟ п©п╬п╡п╣я─я┘ gdkgl,
+п╨п╬я┌п╬я─п╟я▐ п©п╬ я│я┐я┌п╦ п╣я│я┌я▄ п╬п╠п╣я─я┌п╨п╬п╧ п╡п╬п╨я─я┐пЁ я└я┐п╫п╨я├п╦п╧ GLX. п║п╟п╪ п╡п╦п╢п╤п╣я┌ п╬я┤п╣п╫я▄
+п©п╬я┘п╬п╤ п╫п╟ п╡п╦п╢п╤п╣я┌ GtkDrawinigArea п╦ п╢п╬п╠п╟п╡п╩я▐п╣я┌ я┌п╬п╩я▄п╨п╬ я┌я─п╦ п╫п╬п╡я▀п╣ я└я┐п╫п╨я├п╦п╦.
 
-%description -l uk
-Так само, як GTK+ буду╓ться поверх GDK, GtkGLArea побудована поверх
-gdkgl, яка по сут╕ ╓ обгорткою навкруг функц╕й GLX. Сам в╕джет дуже
-схожий на в╕джет GtkDrawinigArea та дода╓ лише три нов╕ функц╕╖.
+%description -l uk.UTF-8
+п╒п╟п╨ я│п╟п╪п╬, я▐п╨ GTK+ п╠я┐п╢я┐я■я┌я▄я│я▐ п©п╬п╡п╣я─я┘ GDK, GtkGLArea п©п╬п╠я┐п╢п╬п╡п╟п╫п╟ п©п╬п╡п╣я─я┘
+gdkgl, я▐п╨п╟ п©п╬ я│я┐я┌я√ я■ п╬п╠пЁп╬я─я┌п╨п╬я▌ п╫п╟п╡п╨я─я┐пЁ я└я┐п╫п╨я├я√п╧ GLX. п║п╟п╪ п╡я√п╢п╤п╣я┌ п╢я┐п╤п╣
+я│я┘п╬п╤п╦п╧ п╫п╟ п╡я√п╢п╤п╣я┌ GtkDrawinigArea я┌п╟ п╢п╬п╢п╟я■ п╩п╦я┬п╣ я┌я─п╦ п╫п╬п╡я√ я└я┐п╫п╨я├я√я≈.
 
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+ - development libs and headers
-Summary(pl):	Pliki nagЁСwkowe GtkGLArea
-Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes que usem a biblioteca GtkGLArea
-Summary(ru):	GtkGLArea - файлы для разработки программ
-Summary(uk):	GtkGLArea - файли для розробки програм
-Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchНs *.h Хt statikХs lНvreyes
+Summary(pl.UTF-8):   Pliki nagе┌цЁwkowe GtkGLArea
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusцёo para desenvolvimento de aplicaц╖ц╣es que usem a biblioteca GtkGLArea
+Summary(ru.UTF-8):   GtkGLArea - я└п╟п╧п╩я▀ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪
+Summary(uk.UTF-8):   GtkGLArea - я└п╟п╧п╩п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪
+Summary(wa.UTF-8):   GtkGLArea est on ahesse po GTK+ - fitchц╝s *.h ц╗t statikц╗s lц╝vreyes
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
@@ -64,38 +64,38 @@ Obsoletes:	libgtkglarea5-devel
 %description devel
 Header files for development using the GtkGLArea widget.
 
-%description devel -l pl
-Pliki nagЁСwkowe do budowania programСw u©ywaj╠cych widgetu GtkGLArea.
+%description devel -l pl.UTF-8
+Pliki nagе┌цЁwkowe do budowania programцЁw uе╪ywajд┘cych widgetu GtkGLArea.
 
-%description devel -l pt_BR
-Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes
+%description devel -l pt_BR.UTF-8
+Bibliotecas e arquivos de inclusцёo para desenvolvimento de aplicaц╖ц╣es
 que usem a biblioteca GtkGLArea.
 
-%description devel -l ru
-Файлы для разработки программ с использованием GtkGLArea.
+%description devel -l ru.UTF-8
+п╓п╟п╧п╩я▀ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ GtkGLArea.
 
-%description devel -l uk
-Файли для розробки програм з використанням GtkGLArea.
+%description devel -l uk.UTF-8
+п╓п╟п╧п╩п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ GtkGLArea.
 
-%description devel -l wa
-Ci paket chal a dvins les fitchНs *.h eyХt les statikХs lНvreyes k' i
-gn a mezЕjhe po fИ des porogrames avou les foncsions di GtkGLArea.
+%description devel -l wa.UTF-8
+Ci paket chal a dvins les fitchц╝s *.h eyц╗t les statikц╗s lц╝vreyes k' i
+gn a mezц╔jhe po fц╘ des porogrames avou les foncsions di GtkGLArea.
 
 %package static
 Summary:	GtkGLArea static libraries
-Summary(pl):	Statyczne biblioteki GtkGLArea
-Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento de aplicaГУes que usem a biblioteca GtkGLArea
+Summary(pl.UTF-8):   Statyczne biblioteki GtkGLArea
+Summary(pt_BR.UTF-8):   Bibliotecas estц║ticas para desenvolvimento de aplicaц╖ц╣es que usem a biblioteca GtkGLArea
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GtkGLArea (OpenGL for GTK+) static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki GtkGLArea (OpenGL dla GTK+).
 
-%description static -l pt_BR
-Bibliotecas estАticas para desenvolvimento de aplicaГУes que usem a
+%description static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para desenvolvimento de aplicaц╖ц╣es que usem a
 biblioteca GtkGLArea.
 
 %prep
