@@ -5,16 +5,18 @@ Summary(ru.UTF-8):	GtkGLArea - это OpenGL виджет для GTK+
 Summary(uk.UTF-8):	GtkGLArea - це OpenGL віджет для GTK+
 Summary(wa.UTF-8):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
-Version:	1.99.0
-Release:	5
+Version:	2.0.0
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkglarea/1.99/%{name}-%{version}.tar.bz2
-# Source0-md5:	cd69f77240ae8038f95a2e5e0b7e5f25
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	c54d8319152170d58f68000a8fb62d2d
 # libGLU for examples only
 BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel => 1:2.1.3-3
+BuildRequires:	gtk+2-devel >= 1:2.1.3-3
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Obsoletes:	libgtkglarea5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -102,7 +104,11 @@ biblioteca GtkGLArea.
 %setup -q
 
 %build
-cp /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 
 # lib doesn't use libGLU
@@ -116,8 +122,7 @@ cp /usr/share/automake/config.sub .
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -133,11 +138,11 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README docs/*.txt
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*
+%attr(755,root,root) %{_libdir}/libgtkgl-2.0.so
+%{_libdir}/libgtkgl-2.0.la
+%{_includedir}/gtkgl-2.0
+%{_pkgconfigdir}/gtkgl-2.0.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgtkgl-2.0.a
