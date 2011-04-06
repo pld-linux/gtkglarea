@@ -6,7 +6,7 @@ Summary(uk.UTF-8):	GtkGLArea - це OpenGL віджет для GTK+
 Summary(wa.UTF-8):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	2.0.1
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/%{name}-%{version}.tar.bz2
@@ -124,6 +124,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} %{_libdir}/libgtkgl-2.0.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -139,7 +141,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README docs/*.txt
 %attr(755,root,root) %{_libdir}/libgtkgl-2.0.so
-%{_libdir}/libgtkgl-2.0.la
 %{_includedir}/gtkgl-2.0
 %{_pkgconfigdir}/gtkgl-2.0.pc
 
