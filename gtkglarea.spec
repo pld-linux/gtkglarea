@@ -6,11 +6,12 @@ Summary(uk.UTF-8):	GtkGLArea - це OpenGL віджет для GTK+
 Summary(wa.UTF-8):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea
 Version:	2.0.1
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/%{name}-%{version}.tar.bz2
 # Source0-md5:	19af1b2185555b3bb28eef8bbaa36067
+Patch0:		format-security.patch
 # libGLU for examples only
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	autoconf
@@ -21,7 +22,7 @@ BuildRequires:	pkgconfig
 Obsoletes:	libgtkglarea5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define 	_noautoreqdep	libGL.so.1 libGLU.so.1
+%define		_noautoreqdep	libGL.so.1 libGLU.so.1
 
 %description
 Just as GTK+ is build on top of GDK, GtkGLArea is built on top of
@@ -102,6 +103,7 @@ biblioteca GtkGLArea.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}

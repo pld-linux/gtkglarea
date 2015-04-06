@@ -1,0 +1,22 @@
+--- gtkglarea-2.0.1/examples/simple.c~	2009-07-17 21:29:39.000000000 +0000
++++ gtkglarea-2.0.1/examples/simple.c	2015-04-06 11:08:22.534158463 +0000
+@@ -157,7 +157,7 @@
+ 
+   /* vendor dependent version info string */
+   info_str = gdk_gl_get_info();
+-  g_print(info_str);
++  g_print("%s", info_str);
+   g_free(info_str);
+ 
+   gtk_main();
+--- gtkglarea-2.0.1/examples/shaders.c~	2009-07-17 21:29:39.000000000 +0000
++++ gtkglarea-2.0.1/examples/shaders.c	2015-04-06 11:08:57.717493647 +0000
+@@ -149,7 +149,7 @@
+      glGetShaderiv(shader_id, GL_INFO_LOG_LENGTH, &infologLength);
+      infoLog = malloc(sizeof(GLchar) * infologLength);
+      glGetShaderInfoLog(shader_id, infologLength, &charsWritten, infoLog);
+-     g_print(infoLog);
++     g_print("%s",infoLog);
+      free(infoLog);
+    }
+ }
